@@ -158,7 +158,7 @@ task assemble(type: Copy, dependsOn: ['preflight', subprojects.assemble]) {
 		from subprojects.configurations.platform
 		from subprojects.configurations.compile
     // Don't just include everything!!
-    includes = ["groovy*.jar", "jackson*.jar", "rhino*.jar", "netty*.jar", "hazelcast*.jar", "vertx*.jar"]
+    includes = ["groovy*.jar", "jackson*.jar", "rhino*.jar", "netty*.jar", "hazelcast*.jar", "vertx*.jar", "scala*.jar"]
 	}
 	doLast {
 		project.ant.chmod(file: "build/$rootProject.name-$version/bin", perm: 'ugo+x')

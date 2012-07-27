@@ -1,0 +1,17 @@
+apply from: "$rootDir/gradle/maven.gradle"
+apply plugin: 'scala'
+
+dependencies {
+	compile project(':vertx-core')
+	compile project(':vertx-platform')
+
+	// Libraries needed to run the scala tools
+        scalaTools 'org.scala-lang:scala-compiler:2.9.2'
+        scalaTools 'org.scala-lang:scala-library:2.9.2'
+
+        // Libraries needed for scala api
+        compile 'org.scala-lang:scala-library:2.9.2'
+}
+artifacts {
+	platform jar
+}
