@@ -15,8 +15,7 @@
  */
 
 import org.vertx.java.deploy.Verticle
-
-import Implicits._
+import org.vertx.scala.core.Implicits._
 
 class EchoClient extends Verticle {
 

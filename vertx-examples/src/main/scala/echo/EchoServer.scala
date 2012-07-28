@@ -16,8 +16,7 @@
 
 import org.vertx.java.core.streams.Pump
 import org.vertx.java.deploy.Verticle
-
-import Implicits._
+import org.vertx.scala.core.Implicits._
 
 class EchoServer extends Verticle {
   def start() {
