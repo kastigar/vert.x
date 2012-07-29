@@ -3,9 +3,13 @@ package net
 
 import org.vertx.java.core.net.NetSocket
 import org.vertx.java.core.buffer.Buffer
+import org.vertx.scala.core.parsetools.ParserSpecifier
 
 import Implicits._
 
 class ExtendedNetSocket(ns: NetSocket) {
-  def handleData(h: Buffer => Unit) = ns.dataHandler(h)
+  type DataHandler = Buffer => Unit
+
+  def handleData(h: DataHandler) = ns.dataHandler(h)
+  def handleData(ps: ParserSpecifier)(h: DataHandler) = ns.dataHandler(ps(h))
 }
